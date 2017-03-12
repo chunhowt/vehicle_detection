@@ -110,4 +110,14 @@ I then assumed each blob corresponded to a vehicle.  I constructed bounding boxe
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
+If we can spend more time, there are a couple of things to improve the pipeline.
 
+Multi-scale. Right now, I only used 2 different scales but this cause problem when the car enters
+the scene and when the car is very far from the view. Adding more scales will help but this cause the pipeline
+to be a lot slower. One way to make it faster is to use different scale at different location of the image
+(eg. bigger scale when it is at the bottom of the image).
+
+Close cars. Right now, when two cars are very close to each other, the pipeline only detect one bounding box.
+This is not ideal, and we should consider how to split the two boxes when computing the heat map and using
+the labels function. This might
+involve using different threshold and different # of frames.
