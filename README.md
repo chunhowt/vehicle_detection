@@ -99,7 +99,7 @@ Here's a [link to my video result](./output_video.mp4)
 I did this at the 12th code cell.
 
 I recorded the positions of positive detections in each frame of the video, keeping results
-from the last 5 frames.  From the positive detections I created a heatmap and then
+from the last 7 frames.  From the positive detections I created a heatmap and then
 thresholded that map (to at least have 4 frames with the boxes) to identify vehicle positions.  I then used
 `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.
 I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
