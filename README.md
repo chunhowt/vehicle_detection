@@ -1,6 +1,4 @@
----
-
-**Vehicle Detection Project**
+### Vehicle Detection Project
 
 This is my solution to Udacity's self driving car term 1 project 5.
 
@@ -16,22 +14,20 @@ The goals / steps of this project are the following:
 * Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
 * Estimate a bounding box for vehicles detected.
 
-**Running the code**
-To run the code, grab the corresponding files from 
+### Running the code
+To run the code, grab the training data from 
 https://github.com/udacity/CarND-Vehicle-Detection and step through the vehicle_detection.ipynb.
 
 
 [//]: # (Image References)
-[image1]: ./examples/car_not_car.png
-[image2]: ./examples/HOG_example.png
-[image4]: ./examples/sliding_window.png
-[image7]: ./examples/output_bboxes.png
-[video1]: ./project_video.mp4
+[image1]: ./output_images/car_not_car.png
+[image2]: ./output_images/HOG_example.png
+[image4]: ./output_images/sliding_window.png
+[image7]: ./output_images/output_bboxes.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
----
 ###Writeup / README
 
 ####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
@@ -104,7 +100,7 @@ I did this at the 12th code cell.
 
 I recorded the positions of positive detections in each frame of the video, keeping results
 from the last 5 frames.  From the positive detections I created a heatmap and then
-thresholded that map to identify vehicle positions.  I then used
+thresholded that map (to at least have 4 frames with the boxes) to identify vehicle positions.  I then used
 `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.
 I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
 
